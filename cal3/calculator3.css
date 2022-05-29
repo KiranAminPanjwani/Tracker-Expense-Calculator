@@ -191,6 +191,12 @@ body{
   cursor: pointer;
   color: darkgreen;
 }
+#calc_again{
+  cursor: pointer;
+  color: rgb(10, 212, 10);
+  text-decoration: underline;
+  display: none;
+}
 .rightNavlink{
   float: right;
 }
