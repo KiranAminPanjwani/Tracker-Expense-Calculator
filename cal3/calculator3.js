@@ -635,6 +635,7 @@ const scale = (num, in_min, in_max, out_min, out_max) => {
 //------------------------------------------------------------------------------------
 
 //Enable Get Your Results button
+var calcAgain = document.getElementById("calc_again");
 var active2 = document.querySelector(".showResult");
 var Digit = document.querySelector(".finalDigit");
 var minusSaving = document.querySelector(".minusSaving");
@@ -645,6 +646,12 @@ active2.addEventListener("click", () => {
   if (active == 4) {
     active2.style.display = "none";
     Digit.style.display = "block";
+     calcAgain.style.display = "block";
+
+    calcAgain.addEventListener('click', ()=> {
+      location.reload(true);
+    })
+    
     $('#myModal').modal('hide');
 
 
@@ -688,6 +695,7 @@ active2.addEventListener("click", () => {
 //saving the result
 var beforeSave = document.getElementById("beforesave");
 var afterSave = document.getElementById("aftersave");
+var calcAgain = document.getElementById("calc_again");
 var SN = document.getElementById("noteSection");
 var Nbackground = document.getElementById("notesBackground");
 var attention = document.querySelector(".modal-body");
@@ -697,6 +705,11 @@ beforeSave.addEventListener('click', (e) => {
   if (active == 4 && Digit.style.display == "block") {
     beforeSave.style.display = "none";
     afterSave.style.display = "block";
+     calcAgain.style.display = "block";
+
+    calcAgain.addEventListener('click', ()=> {
+      location.reload(true);
+    })
 
     let Allrecord = localStorage.getItem('records');
     let objOfRecord; //object which stores all records
