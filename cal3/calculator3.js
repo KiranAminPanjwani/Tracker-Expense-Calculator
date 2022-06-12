@@ -715,7 +715,6 @@ active2.addEventListener("click", () => {
     calcAgain.addEventListener('click', ()=> {
       location.reload(true);
     })
-
     $('#myModal').modal('hide');
 
 
@@ -996,8 +995,6 @@ function display_name(){
       NavUserName.innerHTML= "";
   }
   else{
-    
-
     onSnapshot(gettingUsername, (def)=>{
       NavUserName.innerHTML = '<i class="fa fa-user" aria-hidden="true"></i>' + "  " + def.data().Username;
       NavUserName.style.color = "white";
