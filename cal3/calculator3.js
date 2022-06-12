@@ -1,3 +1,67 @@
+
+console.log("connected")
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-analytics.js";
+import { getAuth , signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js";
+
+//firestore
+import {
+  getFirestore, doc, onSnapshot
+} from "https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js" 
+
+
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAkS7XzeqgGkBzhx23EXdlXSbd7Ui1GsIc",
+  authDomain: "tracker-expense-66fb1.firebaseapp.com",
+  projectId: "tracker-expense-66fb1",
+  storageBucket: "tracker-expense-66fb1.appspot.com",
+  messagingSenderId: "318870892475",
+  appId: "1:318870892475:web:2298fd2c3f05dd1a81de9e",
+  measurementId: "G-D8PGQG8MGW"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
+const auth = getAuth();
+
+const firestore = getFirestore();
+
+
+var DisplayUsername = document.getElementById("DisplayUsername");
+var AccSignout = document.getElementById("AccSignout");
+
+DisplayUsername.addEventListener('click', ()=>{
+  AccSignout.style.display = "block";
+})
+
+AccSignout.addEventListener('click', (e)=>{
+    e.preventDefault();
+    
+    signOut(auth).then(()=>{
+        location = "/index.html";
+        
+    }).catch(error =>{
+        console.log(error);
+    }) 
+});
+
+//to check the expiration of aunthentication
+onAuthStateChanged(auth, (user)=>{
+    if(user)
+    console.log("user if signed in.");
+    else
+    console.log("session is expired");
+})
+// ---------------------------------------------------------------------
+
 // Progress bar
 const progressBar = document.getElementById("progress-bar");
 const progressNext = document.getElementById("progress-next");
@@ -635,6 +699,7 @@ const scale = (num, in_min, in_max, out_min, out_max) => {
 //------------------------------------------------------------------------------------
 
 //Enable Get Your Results button
+var calcAgain = document.getElementById("calc_again");
 var active2 = document.querySelector(".showResult");
 var Digit = document.querySelector(".finalDigit");
 var minusSaving = document.querySelector(".minusSaving");
@@ -645,6 +710,12 @@ active2.addEventListener("click", () => {
   if (active == 4) {
     active2.style.display = "none";
     Digit.style.display = "block";
+    calcAgain.style.display = "block";
+
+    calcAgain.addEventListener('click', ()=> {
+      location.reload(true);
+    })
+
     $('#myModal').modal('hide');
 
 
@@ -686,8 +757,11 @@ active2.addEventListener("click", () => {
 
 
 //saving the result
+var DisplayUsername = document.getElementById("DisplayUsername");
+
 var beforeSave = document.getElementById("beforesave");
 var afterSave = document.getElementById("aftersave");
+var calcAgain = document.getElementById("calc_again");
 var SN = document.getElementById("noteSection");
 var Nbackground = document.getElementById("notesBackground");
 var attention = document.querySelector(".modal-body");
@@ -695,8 +769,14 @@ var attention = document.querySelector(".modal-body");
 beforeSave.addEventListener('click', (e) => {
   e.preventDefault();
   if (active == 4 && Digit.style.display == "block") {
+    if(DisplayUsername.innerText != ""){
     beforeSave.style.display = "none";
     afterSave.style.display = "block";
+    calcAgain.style.display = "block";
+
+    calcAgain.addEventListener('click', ()=> {
+      location.reload(true);
+    })
 
     let Allrecord = localStorage.getItem('records');
     let objOfRecord; //object which stores all records
@@ -757,6 +837,12 @@ beforeSave.addEventListener('click', (e) => {
       attention.innerHTML = 'Enter the values please.';
       beforeSave.style.display = "block";
       afterSave.style.display = "none";
+    }
+
+    }
+    else{
+      $('#myModal').modal('show');
+      attention.innerHTML = 'Login to your account for saving the record.';
     }
   }
   else{
@@ -874,11 +960,50 @@ beforeSave.addEventListener('click', (e) => {
   //user name in the navbar
   var NavUserName = document.querySelector(".username");
 
-  let yourName = localStorage.getItem("User Name");
-  if(yourName == null){
-    NavUserName.innerHTML = "";
+ 
+// function display_name(){
+//   var getname = localStorage.getItem("User name") ;
+//   var mgetname = localStorage.getItem("User name") ;
+
+//   if(getname == null ){
+//       NavUserName.innerHTML= "";
+//   }
+//   else{
+//     NavUserName.innerHTML = '<i class="fa fa-user" aria-hidden="true"></i>' + "  " + getname;
+//     NavUserName.style.color = "white";
+//   }
+  
+//   if(mgetname == null){
+//       NavUserName.innerHTML= "";
+//   }
+//   else{
+//     NavUserName.innerHTML = '<i class="fa fa-user" aria-hidden="true"></i>' + "  " + mgetname;
+//     NavUserName.style.color = "white";
+//   }
+  
+// }
+
+// display_name();
+
+function display_name(){
+
+  onAuthStateChanged(auth, (user)=>{
+    const gettingUsername = doc(firestore, "Credentials", user.uid );
+    
+  
+  
+  if(gettingUsername == null){
+      NavUserName.innerHTML= "";
   }
   else{
-    NavUserName.innerHTML = '<i class="fa fa-user" aria-hidden="true"></i>' + "  " + yourName;
-    NavUserName.style.color = "white";
+    
+
+    onSnapshot(gettingUsername, (def)=>{
+      NavUserName.innerHTML = '<i class="fa fa-user" aria-hidden="true"></i>' + "  " + def.data().Username;
+      NavUserName.style.color = "white";
+    })
   }
+})
+}
+
+display_name();

@@ -191,6 +191,12 @@ body{
   cursor: pointer;
   color: darkgreen;
 }
+#calc_again{
+  cursor: pointer;
+  color: rgb(10, 212, 10);
+  text-decoration: underline;
+  display: none;
+}
 .rightNavlink{
   float: right;
 }
@@ -672,7 +678,11 @@ input[type='range']::-webkit-slider-thumb{
 }
 
 
-
+@media screen and (max-width: 650px){
+  .dropdown-menu{
+    top: 100%;
+  }
+}
 
 
 

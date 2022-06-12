@@ -382,32 +382,55 @@ var modalTitle = document.querySelector(".modal-title");
 var LoginNAme = document.getElementById("loginName");
 var LoginEmail = document.getElementById("loginEmail");
 
+var showForm2 = document.getElementById("SigninModal")
+var signinbuttn = document.getElementById("SigninFormbtn");
+var SmodalTitle = document.querySelector(".Smodal-title");
+
+var thirdSignupAnchor = document.getElementById("thirdSignupbtn");
+var forthSignupAnchor = document.getElementById("forthSignupbtn");
+
+var Lclosenow = document.getElementById("Lclosenow");
+var usersLoginEmail = document.getElementsByClassName("usersLoginEmail");
+ var userLoginpass = document.getElementsByClassName("userLoginpass");
 
 LoginAnchor.addEventListener('click', ()=> {
 	$('#LoginModal').modal('show');
 	loginbuttn.innerHTML = "Log In";
-	modalTitle.innerHTML = "Log-In";
+	modalTitle.innerHTML = "Login to your account";
 });
 secLoginAnchor.addEventListener('click', ()=> {
 	$('#LoginModal').modal('show');
 	loginbuttn.innerHTML = "Log In";
-	modalTitle.innerHTML = "Log-In";
+	modalTitle.innerHTML = "Login to your account";
 });
-
+Lclosenow.addEventListener('click', ()=>{
+	usersLoginEmail[0].value = "";
+	usersLoginEmail[1].value = "";
+	userLoginpass[0].value = "";
+	userLoginpass[1].value = "";
+});
 
 
 FirstSignupAnchor.addEventListener('click', ()=> {
-	$('#LoginModal').modal('show');
-	loginbuttn.innerHTML = "Sign Up";
-	modalTitle.innerHTML = "Sign-Up";
+	$('#SigninModal').modal('show');
+	signinbuttn.innerHTML = "Sign Up";
+	SmodalTitle.innerHTML = "Sign Up";
 });
 SecondSignupAnchor.addEventListener('click', ()=> {
-	$('#LoginModal').modal('show');
-	loginbuttn.innerHTML = "Sign Up";
-	modalTitle.innerHTML = "Sign-Up";
+	$('#SigninModal').modal('show');
+	signinbuttn.innerHTML = "Sign Up";
+	SmodalTitle.innerHTML = "Sign Up";
+});
+thirdSignupAnchor.addEventListener('click', ()=> {
+	$('#SigninModal').modal('show');
+	signinbuttn.innerHTML = "Sign Up";
+	SmodalTitle.innerHTML = "Sign Up";
+});
+forthSignupAnchor.addEventListener('click', ()=> {
+	$('#SigninModal').modal('show');
+	signinbuttn.innerHTML = "Sign Up";
+	SmodalTitle.innerHTML = "Sign Up";
 });
 
-loginbuttn.addEventListener('click', ()=> {
-	localStorage.setItem("User Name", LoginNAme.value);
-	window.location.href= "/cal3/calculator3.html"
-});
+
+

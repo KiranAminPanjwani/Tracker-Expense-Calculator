@@ -1,215 +1,487 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <!-- basic -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- site metas -->
-      <title>Tracker-Expense</title>
-      <link rel="icon" href="/cal3/images/logo51-removebg-preview.png">
-      <meta name="keywords" content="">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <!-- bootstrap css -->
-      <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-      <!-- style css -->
-      <link rel="stylesheet" href="css/style.css">
-      
-      <!-- Responsive-->
-      <link rel="stylesheet" href="css/responsive.css">
-      <!-- fevicon -->
-      <link rel="icon" href="images/fevicon.png" type="image/gif" />
-      <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-      <!-- Tweaks for older IEs-->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-      
-   </head>
-   <!-- body -->
-   <body class="main-layout">
-      <!-- loader  -->
-      <div class="loader-wrapper">
-         <div class="loader"></div>
-         <div class="loader-section section-left"></div>
-         <div class="loader-section section-right"></div>
-       </div>
-      <script>
-         window.addEventListener('load',function(){
-         document.querySelector('body').classList.add("loaded")  
-         });
-      </script>
 
-      
-      <!-- header -->
-      <header>
-         <div class="header">
-            <div class="container" style="width: auto;">
-               <div class="row">
-                  <div class="col-md-9">
-                     <a class="navbar-brand ml-2 mt-3" href="/index.html"><img height="40px" width="320px" src="images/logo51-removebg-preview.png" ></a>
-                  </div>
-                  <div class="col-md-3 rightnavlinks">
-         
-                     <div class="navlinks">
-                        <ul id="navmenu">
-                           <li><a class="navbar-brand ml-2 mt-3 loginbtn" href="#">Login</a></li>
+<head>
+   <!-- basic -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!-- mobile metas -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   <!-- site metas -->
+   <title>Tracker-Expense</title>
+   <link rel="icon" href="/cal3/images/logo51-removebg-preview.png">
+   <meta name="keywords" content="">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <!-- bootstrap css -->
+   <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
-                           <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-color: rgba(0, 0, 0, 0.538);">
-                              <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel"></h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
-                                    </button>
-                                  </div>
-                                  <div class="modal-body">
-                                    <input type="text" placeholder="Name" id="loginName">
-                                    <input type="text" placeholder="Email" id="loginEmail">
-                                  </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" id="loginFormbtn"></button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+   <!-- style css -->
+   <link rel="stylesheet" href="css/style.css">
 
-                           <li><a class="navbar-brand ml-2 mt-3 signupbtn" href="#">Sign up</a></li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </header>
+   <!-- Responsive-->
+   <link rel="stylesheet" href="css/responsive.css">
+   <!-- fevicon -->
+   <link rel="icon" href="images/fevicon.png" type="image/gif" />
+   <!-- Scrollbar Custom CSS -->
+   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+   <!-- Tweaks for older IEs-->
+   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+      media="screen">
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-D8PGQG8MGW"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
 
- 
-      <!-- end header inner -->
-      <!-- end header -->
-      <!-- banner -->
-      <section class="banner_main">
-         
-            <div class="container-fluid">
-               <div class="row d_flex">
-                  <div class="col-xl-6 col-lg-6 col-md-6 mt-5">
-                      <div class="text-bg">
-                        <h1>Expense Calculator</h1>
-                        <span>Free 
-                        Online Calculator<br></span>
-                        <strong>Maintain Your Budgets</strong>
-                        <a href="/cal3/calculator3.html" target="_blank">Get Started</a>
-                     </div>
-                  </div>
-                  <div class="col-xl-6 col-lg-6 col-md-6 padding_lert2">
-                    
-                     <div class="text-img">
-                        <figure style=" opacity: 95%"><img src="images/wallet-removebg-preview (13).png" alt="#"/></figure>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         
-      </section>
-      <!-- end banner -->
-        <!-- about -->
-      <div class="about">
-         <div class="container">
+      gtag('config', 'G-D8PGQG8MGW');
+   </script>
+</head>
+<!-- body -->
+
+<body class="main-layout">
+   <!-- loader  -->
+   <div class="loader-wrapper">
+      <div class="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+   </div>
+   <script>
+      window.addEventListener('load', function () {
+         document.querySelector('body').classList.add("loaded")
+      });
+   </script>
+
+
+   <!-- header -->
+   <header>
+      <div class="header">
+         <div class="container" style="width: auto;">
             <div class="row">
-               <div class="col-md-10 offset-md-1" style="height: 160px;">
-                  
+               <div class="col-md-9">
+                  <a class="navbar-brand ml-2 mt-3" href="/index.html"><img height="40px" width="320px"
+                        src="images/logo51-removebg-preview.png"></a>
                </div>
-               
-            </div>               
-                       
+               <div class="col-md-3 rightnavlinks">
+
+                  <div class="navlinks">
+                     <ul id="navmenu">
+                        <li><a class="navbar-brand ml-2 mt-3 loginbtn" href="#">Login</a></li>
+
+                        <!-- Login Modal -->
+                        <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog"
+                           aria-labelledby="exampleModalLabel" aria-hidden="true"
+                           style="background-color: rgba(0, 0, 0, 0.538);">
+                           <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                              <div class="modal-content">
+                                 <div class="modal-header">
+                                    <b>
+                                       <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                    </b>
+
+                                    <button type="button" class="close" id="Lclosenow" data-dismiss="modal" aria-label="Close">
+                                       <span aria-hidden="true">&times;</span>
+                                    </button>
+                                 </div>
+                                 <!-- login details -->
+                                 <div class="modal-body">
+                                    <form action="/action_page.php" class="deskForm" style="display: none;">
+
+                                       <div class="row">
+                                          <div class="col">
+                                             <a href="#" class="fb btn beforebtn" id="Gilogin">
+                                                <i class="fa fa-github"></i> Login with Github
+                                             </a>
+
+                                             <a href="#" class="twitter btn beforebtn" id="Tlogin">
+                                                <i class="fa fa-twitter fa-fw"></i> Login with Twitter
+                                             </a>
+
+                                             <a href="#" class="google btn beforebtn" id="Gologin"><i
+                                                   class="fa fa-google fa-fw">
+                                                </i> Login with Google+
+                                             </a>
+
+                                          </div>
+
+                                          <div class="vl">
+                                             <span class="vl-innertext">or</span>
+                                          </div>
+
+                                          <div class="col">
+                                             <div class="hide-md-lg">
+                                                <p>Or sign in manually:</p>
+                                             </div>
+
+                                             <input type="email" name="email" placeholder="Email"
+                                                class="usersLoginEmail" id="DeskuserLoginEmail" required>
+                                             <input type="password" name="password" placeholder="Password"
+                                                id="userLoginpass" required>
+                                             <!-- <input type="submit" value="Login"> -->
+                                             <p class="forgotOptions">
+                                                <a href="#" id="thirdSignupbtn">Sign up</a>
+                                                <a href="#" id="DeskuserForgetPass">Forgot Password?</a>
+                                             </p>
+                                             <p id="alertDesk" style="color: rgb(186, 10, 10);">
+
+                                             </p>
+                                          </div>
+
+                                       </div>
+                                    </form>
+                                    <form action="/action_page.php" class="mobForm" style="display: none;">
+
+                                       <div class="row">
+                                          <div class="col socials">
+                                             <p class="social-media d-flex">
+                                                <a class="social-icon icongithub d-flex align-items-center justify-content-center"
+                                                   id="giMobLogin">
+                                                   <i class="fa fa-github"></i></a>
+
+                                                <a class="social-icon twi d-flex align-items-center justify-content-center"
+                                                   id="twiMobLogin">
+                                                   <i class="fa fa-twitter"></i></a>
+
+                                                <a class="social-icon G d-flex align-items-center justify-content-center"
+                                                   id="googleMobLogin">
+                                                   <i class="fa fa-google" aria-hidden="true"></i></a>
+                                             </p>
+
+                                          </div>
+
+                                          <div class="vl">
+                                             <span class="vl-innertext">or</span>
+                                          </div>
+
+                                          <div class="col">
+                                             <div class="hide-md-lg">
+                                                <p>Or sign in manually:</p>
+                                             </div>
+
+                                             <input type="email" name="email" placeholder="Email "
+                                                class="usersLoginEmail" id="MobuserLoginEmail" required>
+                                             <input type="password" name="password" placeholder="Password"
+                                                id="MobuserLoginpass" required>
+                                             <!-- <input type="submit" value="Login"> -->
+                                             <p class="forgotOptions">
+                                                <a id="forthSignupbtn">Sign up</a>
+                                                <a id="MobuserForgetPass">Forgot Password?</a>
+                                             </p>
+                                             <p id="alertMob" style="color: rgb(186, 10, 10);">
+                                                
+                                             </p>
+                                          </div>
+
+                                       </div>
+                                    </form>
+
+                                 </div>
+                                 <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" id="loginFormbtn"></button>
+
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+
+                        <!-- Forgot Password Modal -->
+                        <div class="modal fade" id="ForgotPassModal" tabindex="-1" role="dialog"
+                           aria-labelledby="exampleModalLabel" aria-hidden="true"
+                           style="background-color: rgba(0, 0, 0, 0.538);">
+                           <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                              <div class="modal-content">
+                                 <div class="modal-header">
+                                    <b>
+                                       <h5 class="modal-title">Forgot Password?</h5>
+                                    </b>
+
+                                    <button type="button" class="close" id="closenow" data-dismiss="modal" aria-label="Close">
+                                       <span aria-hidden="true">&times;</span>
+                                    </button>
+                                 </div>
+                                 <!-- login details -->
+                                 <div class="modal-body">
+
+                                    <form action="/action_page.php" id="FPForm" style="display: none;">
+
+                                       <div class="row">
+                                          <div class="col">
+                                             <p><b>Email</b></p>
+                                             <input type="text" name="email" placeholder="Enter email"
+                                                id="forgetEmail" required>
+                                             <p><b>Username</b></p>
+                                             <input type="text" name="username" placeholder="Enter username"
+                                                id="forgetName" required>
+                                             <!-- <input type="submit" value="Login"> -->
+                                             <p class="forgotOptions">
+                                                <!-- <a href="#" id="thirdSignupbtn">Next</a> -->
+                                                <a id="noUsername">Don't have Username?</a>
+                                             </p>
+                                             <p id="alertFP" style="color: rgb(186, 10, 10);">
+
+                                             </p>
+                                          </div>
+
+                                       </div>
+                                    </form>
+
+                                 </div>
+                                 <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" id="FPnext"></button>
+
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+
+
+
+
+
+                        <li><a class="navbar-brand ml-2 mt-3 signupbtn" href="#">Sign up</a></li>
+                        <!-- Signup Modal -->
+                        <div class="modal fade" id="SigninModal" tabindex="-1" role="dialog"
+                           aria-labelledby="exampleModalLabel" aria-hidden="true"
+                           style="background-color: rgba(0, 0, 0, 0.538);">
+                           <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                              <div class="modal-content">
+                                 <div class="modal-header">
+                                    <b>
+                                       <h5 class="Smodal-title" id="exampleModalLabel"></h5>
+                                    </b>
+
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                       <span aria-hidden="true">&times;</span>
+                                    </button>
+                                 </div>
+                                 <!-- signin details -->
+                                 <div class="modal-body">
+                                    <form action="/action_page.php" class="deskForm" style="display: none;">
+
+                                       <div class="row">
+
+                                          <div class="col">
+                                             <div class="hide-md-lg">
+                                                <p>Or sign in manually:</p>
+                                             </div>
+
+                                             <p><b>Email</b></p>
+                                             <input type="text" name="email" placeholder="Enter email"
+                                                id="deskSigninEmail" required>
+                                             <p><b>Username</b></p>
+                                             <input type="text" name="username" placeholder="Enter username"
+                                                id="deskSigninName" required>
+                                             <p><b>Password</b></p>
+                                             <input type="password" name="password" placeholder="Enter password"
+                                                id="deskSigninPassword" required>
+                                             <p><b>Confirm Password</b></p>
+                                             <input type="password" name="repeatPassword" placeholder="Repeat password"
+                                                id="deskSigninRepass" required>
+                                             
+                                             <div
+                                                style="display:flex;justify-content: flex-start; align-items: center;">
+                                                <input type="checkbox" checked="checked" name="remember"
+                                                   style="margin: 0 !important; width: auto;">
+                                                <p style="display: inline; margin-left: 5px;"> Remember me</p>
+                                             </div>
+                                             <p class="terms">
+                                                By creating an account you agree to our <a href="#"
+                                                   style="color:dodgerblue"> Terms & Privacy</a>.
+                                             </p>
+                                             <p class="existingEmail" style="color: rgb(186, 10, 10);">
+                                                   
+                                             </p>
+                                          </div>
+
+                                       </div>
+                                    </form>
+                                    <form action="/action_page.php" class="mobForm" style="display: none;">
+
+                                       <div class="row">
+
+                                          <div class="col">
+
+                                             <p><b>Email</b></p>
+                                             <input type="text" name="email" placeholder="Enter email"
+                                                id="mobSigninEmail" required>
+                                             <p><b>Username</b></p>
+                                             <input type="text" name="username" placeholder="Enter username"
+                                                id="mobSigninName" required>
+                                             <p><b>Password</b></p>
+                                             <input type="password" name="password" placeholder="Enter password"
+                                                id="mobSigninPassword" required>
+                                             <p><b>Confirm Password</b></p>
+                                             <input type="password" name="repeatPassword" placeholder="Repeat password"
+                                                id="mobSigninRepass" required>
+                                             
+                                             <div
+                                                style="display:flex;justify-content: flex-start; align-items: center;">
+                                                <input type="checkbox" checked="checked" name="remember"
+                                                   style="margin: 0 !important; width: auto;">
+                                                <p style="display: inline; margin-left: 5px;"> Remember me</p>
+                                             </div>
+                                             <p class="terms">
+                                                By creating an account you agree to our <a href="#"
+                                                   style="color:dodgerblue !important;"> Terms & Privacy</a>.
+                                             </p>
+                                             <p class="existingEmail" style="color: rgb(186, 10, 10);">
+                                                   
+                                             </p>
+                                          </div>
+
+                                       </div>
+                                    </form>
+                                 </div>
+                                 <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" id="SigninFormbtn"></button>
+
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+
+                     </ul>
+                  </div>
+               </div>
+            </div>
          </div>
       </div>
-      <section id="introblocks" class="mb-5 pb-5 center container-fluid">
-         <ul class="nospace ">
-           <li class="one_third">
+   </header>
+
+
+   <!-- end header inner -->
+   <!-- end header -->
+   <!-- banner -->
+   <section class="banner_main">
+
+      <div class="container-fluid">
+         <div class="row d_flex">
+            <div class="col-xl-6 col-lg-6 col-md-6 mt-5">
+               <div class="text-bg">
+                  <h1>Expense Calculator</h1>
+                  <span>Free
+                     Online Calculator<br></span>
+                  <strong>Maintain Your Budgets</strong>
+                  <a href="/cal3/calculator3.html" target="_blank">Get Started</a>
+               </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 padding_lert2">
+
+               <div class="text-img">
+                  <figure style=" opacity: 95%"><img src="images/wallet-removebg-preview (13).png" alt="#" /></figure>
+               </div>
+            </div>
+         </div>
+      </div>
+
+   </section>
+   <!-- end banner -->
+   <!-- about -->
+   <div class="about">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-10 offset-md-1" style="height: 160px;">
+
+            </div>
+
+         </div>
+
+      </div>
+   </div>
+   <section id="introblocks" class="mb-5 pb-5 center container-fluid">
+      <ul class="nospace ">
+         <li class="one_third">
             <div class="titlepage">
                <span>About our</span>
                <h2>Calculation Accuracy</h2>
                <div class="accText">
-                  <p>Our easy-to-use budgeting calculator will help you understand your expenses and manage your money. The budget process depends on an accurate calculation of expenses and revenues (Total Expenses = Net Revenue - Net Income) so that you can calculate the total monthly and annual expenses. Utilizing our free expense calculator will take control of your spending!</p>
+                  <p>Our easy-to-use budgeting calculator will help you understand your expenses and manage your money.
+                     The budget process depends on an accurate calculation of expenses and revenues (Total Expenses =
+                     Net Revenue - Net Income) so that you can calculate the total monthly and annual expenses.
+                     Utilizing our free expense calculator will take control of your spending!</p>
                </div>
             </div>
-           </li>
-         </ul>
-       </section>
-       <!-- end about -->
+         </li>
+      </ul>
+   </section>
+   <!-- end about -->
 
 
 
- <!-- contact -->
-      <div id="contact" class="contact">
+   <!-- contact -->
+   <div id="contact" class="contact">
+      <div class="container">
+         <div class="row d_flex">
+            <div class="col-md-6">
+               <div class="contact_box">
+                  <div class="titlepage">
+                     <span>History record</span>
+                     <h2>Let’s maintain a record.</h2>
+                  </div>
+                  <p>You can maintain a history of your expenses to your board. You can add Tacker-Expense notes along
+                     with the date mentioned on your boards. This layout will help you to track the previous record of
+                     your expenses. You can add and delete the Tracker-Expense notes using buttons. Maintaining a record
+                     will keep you financially active and involved and help you cut your unnecessary expenses. Try it
+                     now!</p>
+               </div>
+            </div>
+            <div class="col-md-6">
+               <figure style="justify-content: center; text-align: center;"><img src="images/expense5.png" alt="#" />
+               </figure>
+            </div>
+         </div>
+         <br><br><br><br><br><br><br>
+
+      </div>
+   </div>
+   <!-- end contact -->
+
+
+   <!--  footer -->
+   <footer>
+      <div class="footer">
          <div class="container">
-             <div class="row d_flex">
-               <div class="col-md-6">
-                  <div class="contact_box">
-                     <div class="titlepage">
-                        <span>History record</span>
-                        <h2>Let’s maintain a record.</h2>
-                     </div>   
-                     <p>You can maintain a history of your expenses to your board. You can add Tacker-Expense notes along with the date mentioned on your boards. This layout will help you to track the previous record of your expenses. You can add and delete the Tracker-Expense notes using buttons. Maintaining a record will keep you financially active and involved and help you cut your unnecessary expenses. Try it now!</p>
+            <div class="row">
+               <div class="col-md-8 offset-md-2">
+                  <div class="cont">
+                     <h3>Track-Expense Calculation <br>
+                        Online Expense Calculator 2022
+                     </h3>
+                     <p>Managing extra expenses & utilizing savings.</p>
+                     <a class="read_more" id="secondLoginbtn">Login</a>
+                     <a class="signup" id="Secondsignupbtn" href="#">Sign up</a>
                   </div>
                </div>
-              <div class="col-md-6">
-               <figure style="justify-content: center; text-align: center;"><img src="images/expense5.png" alt="#"/></figure>
-               </div>
-            </div> 
-            <br><br><br><br><br><br><br>
-
+            </div>
          </div>
-      </div>
-      <!-- end contact -->
-
-     
-      <!--  footer -->
-      <footer >
-         <div class="footer">
+         <div class="copyright">
             <div class="container">
                <div class="row">
-                  <div class="col-md-8 offset-md-2">
-                     <div class="cont">
-                        <h3>Track-Expense Calculation <br>
-                           Online Expense Calculator 2022
-                        </h3>
-                        <p>Managing extra expenses & utilizing savings.</p>
-                        <a class="read_more" id="secondLoginbtn">Login</a>
-                        <a class="signup" id="Secondsignupbtn" href="#">Sign up</a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="copyright">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-md-12">
-                        <p  >© 2022 Track-Expense free services.</a></p>
-                     </div>
+                  <div class="col-md-12">
+                     <p>© 2022 Track-Expense free services.</a></p>
                   </div>
                </div>
             </div>
          </div>
-      </footer>
-      <!-- end footer -->
-      <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <script src="js/plugin.js"></script>
-      <!-- sidebar -->
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script>
-      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-   </body>
-</html>
+      </div>
+   </footer>
+   <!-- end footer -->
+   <!-- Javascript files-->
+   <script src="js/jquery.min.js"></script>
+   <script src="js/popper.min.js"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/jquery-3.0.0.min.js"></script>
+   <script src="js/plugin.js"></script>
+   <!-- sidebar -->
+   <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+   <script type="module" src="js/Cal_Firebase.js"></script>
+   <script src="js/custom.js"></script>
+   <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+</body>
 
+</html>
