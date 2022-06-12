@@ -321,7 +321,7 @@ gitBtnD.addEventListener('click', () => {
             const user = result.user;
 
             console.log(user)
-            location = "/cal3/calculator3.html";
+            window.location.href = "/cal3/calculator3.html";
             // ...
         }).catch((error) => {
             // Handle Errors here.
@@ -350,7 +350,7 @@ giMobLogin.addEventListener('click', () => {
             const user = result.user;
 
             console.log(user)
-            location = "/cal3/calculator3.html";
+            window.location.href = "/cal3/calculator3.html";
             // ...
         }).catch((error) => {
             // Handle Errors here.
