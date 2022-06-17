@@ -391,7 +391,8 @@ var forthSignupAnchor = document.getElementById("forthSignupbtn");
 
 var Lclosenow = document.getElementById("Lclosenow");
 var usersLoginEmail = document.getElementsByClassName("usersLoginEmail");
- var userLoginpass = document.getElementsByClassName("userLoginpass");
+ var userLoginpass = document.getElementById("userLoginpass");
+ var MobuserLoginpass = document.getElementById("MobuserLoginpass");
 
 LoginAnchor.addEventListener('click', ()=> {
 	$('#LoginModal').modal('show');
@@ -406,8 +407,8 @@ secLoginAnchor.addEventListener('click', ()=> {
 Lclosenow.addEventListener('click', ()=>{
 	usersLoginEmail[0].value = "";
 	usersLoginEmail[1].value = "";
-	userLoginpass[0].value = "";
-	userLoginpass[1].value = "";
+	userLoginpass.value = "";
+	MobuserLoginpass.value = "";
 });
 
 

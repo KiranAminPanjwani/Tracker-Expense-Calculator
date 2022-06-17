@@ -84,7 +84,8 @@
                                        <h5 class="modal-title" id="exampleModalLabel"></h5>
                                     </b>
 
-                                    <button type="button" class="close" id="Lclosenow" data-dismiss="modal" aria-label="Close">
+                                    <button type="button" class="close" id="Lclosenow" data-dismiss="modal"
+                                       aria-label="Close">
                                        <span aria-hidden="true">&times;</span>
                                     </button>
                                  </div>
@@ -133,6 +134,9 @@
                                           </div>
 
                                        </div>
+                                       <p id="LoginConflict" style="color: rgb(186, 10, 10);">
+                                          
+                                       </p>
                                     </form>
                                     <form action="/action_page.php" class="mobForm" style="display: none;">
 
@@ -173,11 +177,14 @@
                                                 <a id="MobuserForgetPass">Forgot Password?</a>
                                              </p>
                                              <p id="alertMob" style="color: rgb(186, 10, 10);">
-                                                
+
                                              </p>
                                           </div>
 
                                        </div>
+                                       <p id="MobLoginConflict" style="color: rgb(186, 10, 10);">
+
+                                       </p>
                                     </form>
 
                                  </div>
@@ -200,7 +207,8 @@
                                        <h5 class="modal-title">Forgot Password?</h5>
                                     </b>
 
-                                    <button type="button" class="close" id="closenow" data-dismiss="modal" aria-label="Close">
+                                    <button type="button" class="close" id="closenow" data-dismiss="modal"
+                                       aria-label="Close">
                                        <span aria-hidden="true">&times;</span>
                                     </button>
                                  </div>
@@ -212,16 +220,8 @@
                                        <div class="row">
                                           <div class="col">
                                              <p><b>Email</b></p>
-                                             <input type="text" name="email" placeholder="Enter email"
-                                                id="forgetEmail" required>
-                                             <p><b>Username</b></p>
-                                             <input type="text" name="username" placeholder="Enter username"
-                                                id="forgetName" required>
-                                             <!-- <input type="submit" value="Login"> -->
-                                             <p class="forgotOptions">
-                                                <!-- <a href="#" id="thirdSignupbtn">Next</a> -->
-                                                <a id="noUsername">Don't have Username?</a>
-                                             </p>
+                                             <input type="email" name="email" placeholder="Enter email" id="forgetEmail"
+                                                required>
                                              <p id="alertFP" style="color: rgb(186, 10, 10);">
 
                                              </p>
@@ -232,15 +232,11 @@
 
                                  </div>
                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" id="FPnext"></button>
-
+                                    <button class="btn btn-secondary" id="FPnext">Reset Password</button>
                                  </div>
                               </div>
                            </div>
                         </div>
-
-
-
 
 
                         <li><a class="navbar-brand ml-2 mt-3 signupbtn" href="#">Sign up</a></li>
@@ -282,7 +278,7 @@
                                              <p><b>Confirm Password</b></p>
                                              <input type="password" name="repeatPassword" placeholder="Repeat password"
                                                 id="deskSigninRepass" required>
-                                             
+
                                              <div
                                                 style="display:flex;justify-content: flex-start; align-items: center;">
                                                 <input type="checkbox" checked="checked" name="remember"
@@ -294,7 +290,7 @@
                                                    style="color:dodgerblue"> Terms & Privacy</a>.
                                              </p>
                                              <p class="existingEmail" style="color: rgb(186, 10, 10);">
-                                                   
+
                                              </p>
                                           </div>
 
@@ -318,7 +314,7 @@
                                              <p><b>Confirm Password</b></p>
                                              <input type="password" name="repeatPassword" placeholder="Repeat password"
                                                 id="mobSigninRepass" required>
-                                             
+
                                              <div
                                                 style="display:flex;justify-content: flex-start; align-items: center;">
                                                 <input type="checkbox" checked="checked" name="remember"
@@ -330,7 +326,7 @@
                                                    style="color:dodgerblue !important;"> Terms & Privacy</a>.
                                              </p>
                                              <p class="existingEmail" style="color: rgb(186, 10, 10);">
-                                                   
+
                                              </p>
                                           </div>
 
@@ -479,7 +475,7 @@
    <script src="js/plugin.js"></script>
    <!-- sidebar -->
    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-   <script type="module" src="js/Cal_Firebase.js"></script>
+   <script type="module" src="./js/Cal_Firebase.js"></script>
    <script src="js/custom.js"></script>
    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 </body>
