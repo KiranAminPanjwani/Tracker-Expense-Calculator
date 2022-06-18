@@ -21,18 +21,20 @@ Visit the website here: [Tracker Expense Calculator](https://yellow-dune-0d56eaa
 
 ## Working:
 After entering to our website, user will be able to either use the calculator in the guest mode or by signing in to their account. 
-- Guest mode can be accessed by clicking the "Get Started" button aviallbale on the home page. In the guest mode, user will be able to use the calculator without creating the account. But the user will not be avle to save their records with login to their account.
-- In order to save the record, user need to login either by using Credentials or by Signing in Manually. 
-</br>The login form offers 4 options: 
-  1) Login with Github
-  2) Login with Twitter
-  3) Login with Google account
-  4) Login using Email address and paassword. (Wi)
+- Guest mode can be accessed by clicking the "Get Started" button aviallbale on the home page. The user can use the calculator in guest mode without creating an account. However, without logging into the user's account will prevent them from saving their records.
+- User must log in either manually or using credentials in order to save the record. </br>
+  There are 4 options on the login form:
+  1) Use GitHub to sign in
+  2) Use Twitter to sign in
+  3) Use a Google account to sign in
+  4) Enter your email address and password to log in. (Before logging in, user must Signup.)
 
 ## Guest Mode Functionalities:
 
 
 https://user-images.githubusercontent.com/90326051/174440075-b804b566-01c3-4512-b827-6030ef9c8307.mp4
+
+Without logging into their account, users can compute their spending using the guest mode. In this mode, the ability to save records is limited, and the username will not be displayed in the upper right corner.
 
 
 ## User Account Functionalities:
@@ -40,19 +42,19 @@ https://user-images.githubusercontent.com/90326051/174440075-b804b566-01c3-4512-
 
 https://user-images.githubusercontent.com/90326051/174441483-9bef8514-5cda-4f49-8b8b-33d187d0130a.mp4
 
+The user could simply compute their spending after logging into their account, save their records, and view their username in the upper right corner of the screen. The user has the option to sign in or out whenever needed.
 
-## Built with :-
+## Built with:
 ⭕ HTML
 ⭕ CSS
 ⭕ Bootstrap 
 ⭕ JavaScript
 
-## How to use :-
+## How to use:
 - Clone the repository
 - Go to the directory
 - Run index.html file
-- Enter book name, author and type of book 
-- Press add book
+- And follow the procedure shown above in the video.
 
 # Feedback✌🏼
 
