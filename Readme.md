@@ -44,6 +44,19 @@ https://user-images.githubusercontent.com/90326051/174441483-9bef8514-5cda-4f49-
 
 The user could simply compute their spending after logging into their account, save their records, and view their username in the upper right corner of the screen. The user has the option to sign in or out whenever needed.
 
+## Responsiveness:
+- The website has responsive styling of homepage, forms and calculator.
+
+
+https://user-images.githubusercontent.com/90326051/174443257-7747e116-a370-4528-9785-c78c6b6055aa.mp4
+
+
+
+https://user-images.githubusercontent.com/90326051/174443289-efa51523-65b6-4f5b-96ab-49555c23e683.mp4
+
+
+
+
 ## Built with:
 ⭕ HTML
 ⭕ CSS
