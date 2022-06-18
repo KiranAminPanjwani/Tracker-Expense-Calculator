@@ -21,7 +21,7 @@ Visit the website here: [Tracker Expense Calculator](https://yellow-dune-0d56eaa
 
 ## Working:
 After entering to our website, user will be able to either use the calculator in the guest mode or by signing in to their account. 
-- Guest mode can be accessed by clicking the "Get Started" button aviallbale on the home page. The user can use the calculator in guest mode without creating an account. However, without logging into the user's account will prevent them from saving their records.
+- Guest mode can be accessed by clicking the "Get Started" button available on the home page. The user can use the calculator in guest mode without creating an account. However, without logging into the user's account will prevent them from saving their records.
 - User must log in either manually or using credentials in order to save the record. </br>
   There are 4 options on the login form:
   1) Use GitHub to sign in
@@ -59,7 +59,7 @@ The user could simply compute their spending after logging into their account, s
 # Feedback✌🏼
 
 ➡Share your feedbacks and suggestions by reaching out to me.✨ </br>
-➡Or simply create an <a href="https://github.com/KiranAminPanjwani/Tracker-Expense-Calculator/issues">issue</a> to this respository if you want to fix a bug or add a new feature.
+➡Or simply create an <a href="https://github.com/KiranAminPanjwani/Tracker-Expense-Calculator/issues">issue</a> to this repository if you want to fix a bug or add a new feature.
 <br> 
 <br>
 <p align="right"><a href="#top"><img src="https://img.shields.io/badge/-Back%20to%20Top-red?style=for-the-badge" /></a></p>
