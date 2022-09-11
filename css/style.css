@@ -174,8 +174,21 @@ a,
 img {
      max-width: 100%;
      height: auto;
+    
+}
+a img {
+     transform: translateY(-150px) scale(1.2) translateX(-60px);
 }
 
+.text-bg{
+     transform: translateX(-125px) translateY(-19px) scale(0.8);
+}
+
+.text-img{
+     height:30em;
+     width: 40em;
+     transform: translateX(120px) translateY(-50px);
+}
 :focus {
      outline: 0;
 }
