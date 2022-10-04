@@ -538,7 +538,7 @@ h6{
 background-color: goldenrod;
 }
 #notesBackground{
-  background-color: #a7a5a5;
+  background: linear-gradient(300deg, #001619 , #046d50 10%,#001619 70%);
   padding: 30px;
   height: max-content;
   width: 100%;
