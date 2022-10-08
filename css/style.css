@@ -553,12 +553,13 @@ button {
 }
 
 .navlinks #navmenu li {
-     display: inline;
+     display:inline-flex;
 }
 
 /* .navlinks a*/
 .loginbtn,
-.signupbtn {
+.signupbtn,
+.contactmeee {
      color: white;
      font-size: 19px;
 }
@@ -567,11 +568,17 @@ button {
      font-size: 19px;
 }
 
+.contactmeee:hover{
+     color: #08f356 !important;
+     font-size: 19px;
+}
+
 @media (max-width: 1200px) {
 
      .loginbtn,
-     .signupbtn {
-          display: none;
+     .signupbtn,
+     .contactmeee {
+     display:none;
      }
 }
 
@@ -595,6 +602,19 @@ button {
      color: #08f356 ;
 }
 
+.contactmeee {
+     background: #ffc107ec;
+     padding: 3px 27px;
+     color: white;
+     border-radius: 10px;
+}
+
+.contactmeee:hover {
+     background: transparent;
+     border: #08f356 solid 1px;
+     box-shadow: 2px 10px 5px rgba(1, 22, 13, 0.516);
+     color: #08f356 ;
+}
 /* loader */
 
 
@@ -1463,3 +1483,92 @@ input[type=submit]:hover {
           display: none !important;
      }
 }
+
+/* Contact Section */
+
+form { max-width:430px; margin: 0px auto; }
+
+.contact-me {
+  background: white ;
+ 
+  border: 2px solid darkgrey;
+  line-height: 12px;
+  transition: all 0.3s;
+  padding: 10px;
+  margin-bottom: -10px;
+  width:35%;
+  align-items: center;
+  margin-left: 33%;
+  border-radius: 10px ;
+  box-sizing: border-box;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+.feedback-input {
+  color:rgb(8, 8, 8);
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 15px;
+  line-height: 22px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  background-color: transparent;
+  border:2px solid #ffbb00;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+.feedback-input:hover{
+  background-color: #f9e324;
+}
+
+.feedback-input:focus { border:2px solid #f9e324; }
+
+textarea {
+  height: 100px;
+  line-height: 150%;
+  resize:vertical;
+}
+
+.contact1 {
+  color: #000000;
+  width: 100%;
+  text-align: center;
+  padding-top: 1%;
+  text-transform: uppercase;
+  outline: 10;
+}
+
+[type="submit"] {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  width: 30%;
+  align-items: center;
+  position: relative;
+  margin-left: 0%;
+  background:#E0115F;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+[type="submit"]:hover { background:#d6ff0b;
+  width:40%;
+  margin-left: 33%;
+ }
