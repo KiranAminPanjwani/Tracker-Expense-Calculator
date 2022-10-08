@@ -240,6 +240,7 @@
 
 
                         <li><a class="navbar-brand ml-2 mt-3 signupbtn" href="#">Sign up</a></li>
+                        <li><a class="navbar-brand ml-2 mt-3 contactmeee" href="#contactmeee">Contact Me</a></li>
                         <!-- Signup Modal -->
                         <div class="modal fade" id="SigninModal" tabindex="-1" role="dialog"
                            aria-labelledby="exampleModalLabel" aria-hidden="true"
@@ -455,6 +456,21 @@
                </div>
             </div>
          </div>
+         <br>
+         <br>
+         <div class="contact-me" >
+            <h1 class="contact1">Contact Me</h1>
+            <section class="contact section" id="contactmeee">
+                <form action="" method="POST">
+                    <input type="hidden" name="_subject" value="New Query Arrived">
+                    <input name="name" type="text" class="feedback-input" placeholder="Name" required />
+                    <input type="hidden" name="_next" value="http://127.0.0.1:5500/thankyou.html">
+                    <input name="email" type="text" class="feedback-input" placeholder="Email" required />
+                    <textarea name="text" class="feedback-input" placeholder="Comment"></textarea>
+                    <input type="submit" value="SUBMIT" />
+                </form>
+            </section>
+        </div>
          <div class="copyright">
             <div class="container">
                <div class="row">
